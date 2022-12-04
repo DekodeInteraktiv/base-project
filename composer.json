@@ -20,7 +20,10 @@
 	"require-dev": {
 		"dekode/coding-standards": "4.0.0",
 		"dekode/logging": "1.0.0",
-		"ergebnis/composer-normalize": "^2.28"
+		"ergebnis/composer-normalize": "^2.28",
+		"phpstan/extension-installer": "^1.2",
+		"phpstan/phpstan": "^1.9",
+		"szepeviktor/phpstan-wordpress": "^1.1"
 	},
 	"repositories": {
 		"mu-plugins": {
@@ -66,7 +69,8 @@
 			"inpsyde/wp-translation-downloader": true,
 			"johnpbloch/wordpress-core-installer": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"ergebnis/composer-normalize": true
+			"ergebnis/composer-normalize": true,
+			"phpstan/extension-installer": true
 		},
 		"platform": {
 			"php": "8.1"
@@ -114,6 +118,9 @@
 		],
 		"lint": [
 			"./vendor/bin/phpcs ."
+		],
+		"phpstan": [
+			"./vendor/bin/phpstan analyse packages --level=8"
 		]
 	}
 }
